@@ -1,0 +1,51 @@
+div {
+  position: absolute;
+  bottom: 50%; left: 50%;
+}
+$bar-w: 1.25em;
+$bar-h: 5 * $bar-w;
+
+.bar {
+  width: $bar-w; height: $bar-h;
+  background: currentColor;
+}
+
+$n: 10;
+
+@for $i from 0 to $n {
+  .bar:nth-child(#{$i + 1}) {
+  margin-left: ($i - .5 * $n) * $bar-w;
+  }
+}
+
+$c: #63a6c1 #1e3f57; // 1st = light 2nd = dark
+
+@for $i from 0 to $n {
+  // list of mix() arguments for current bar
+  $args: append($c, $i * 100% / ($n - 1));
+
+  .bar:nth-child(#{$i + 1}) {
+  background: mix($args...);
+  animation: bar 3s cubic-bezier(.81, .04, .4, .7) infinite;
+  animation-delay: $i*50ms;
+  }
+}
+
+.loader {
+  -webkit-box-reflect: below 0 linear-gradient(rgba(#fff, 0), rgba(#fff, .7));
+}
+$loader-w: $n * $bar-w;
+
+.loader {
+  width: $loader-w; height: $bar-h;
+}
+.loader { margin-left: -.5 * $loader-w; }
+
+.bar { bottom: 0; }
+
+@keyframes bar {
+  0% {
+  transform: rotate(-.5turn) rotateX(-1turn);
+  }
+  75%, 100% { transform: none; }
+}

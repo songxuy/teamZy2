@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jsdemo</title>
+  <link rel="stylesheet" href="jsdemo.css">
+</head>
+<body>
+  <div class='loader'>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <!-- 继续创建9条 -->
+  </div>
+</body>
+</html>
+<script>
+  //1 覆盖为
+  //let array = Array(5).fill('');
+  let array = ['1',2].fill('');
+  console.log(array); //['','','','','']
+
+  //2 解析a标签
+  function parseURL(url) {
+    var a =  document.createElement('a');
+    a.href = url;
+    return {
+        host: a.hostname,
+        port: a.port,
+        query: a.search,
+        params: (function(){
+            var ret = {},
+                seg = a.search.replace(/^\?/,'').split('&'),
+                len = seg.length, i = 0, s;
+            for (;i<len;i++) {
+                if (!seg[i]) { continue; }
+                s = seg[i].split('=');
+                ret[s[0]] = s[1];
+            }
+            return ret;
+        })(),
+        hash: a.hash.replace('#','')
+    };
+}
+console.log(parseURL('http://www.baidu.com/a/b?data=123'))
+</script>

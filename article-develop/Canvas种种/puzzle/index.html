@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/untangle.css">
+</head>
+<body>
+    <header><h1>Puzzle Game</h1></header>
+    <p>Puzzle <span id="level">0</span>, 进度：<span id="progress">0</span>%</p>
+    <canvas id="canvas" width="768" height="400">
+        Sorry, your web browser does not support Canvas content.
+    </canvas>
+
+    <canvas id="test" width="300" height="300"></canvas>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="js/puzzle.js"></script>
+    
+    <!-- <script>
+        let cvs = document.getElementById('canvas');
+        console.log(cvs);
+        let c = cvs.getContext('2d');
+        
+        let radial = c.createRadialGradient(400, 400, 20, 200, 200, 200);
+        radial.addColorStop(0, '#fff');
+        radial.addColorStop(0.9, '#666');
+        radial.addColorStop(1, '#fff');
+        // let linear = c.createLinearGradient(50, 0, 50, 100);
+        // linear.addColorStop(0, '#fff'); // 如果只定义一个色标，就是纯色，非渐变了
+        // 如果不添加色标，就没有颜色
+        c.fillStyle = radial;
+        c.beginPath();
+        c.arc(200, 200, 200, 0, Math.PI*2);   
+        c.fill();
+    </script> -->
+    <!-- <script>
+        let cvs = document.getElementById('test');
+        let ctx = cvs.getContext('2d');
+        
+        // 画条基线来区分每个textAlign
+        ctx.beginPath();
+        ctx.moveTo(200, 0);
+        ctx.lineTo(200, 100);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = '#00a1f4';
+        ctx.closePath();
+        ctx.stroke();
+        
+        ctx.font = '20px Arial';
+        ctx.fillStyle = '#0cc';
+        ctx.fillText('textAlign的5种对齐方式', 25, 250);
+
+        // textAlign = 'start'
+        ctx.textAlign = 'start';
+        ctx.fillText('start', 200, 20);
+        // textAlign = 'end'
+        ctx.textAlign = 'end';
+        ctx.fillText('end', 200, 40);
+        // textAlign = 'left'
+        ctx.textAlign = 'left';
+        ctx.fillText('left', 200, 60);
+        // textAlign = 'center'
+        ctx.textAlign = 'center';
+        ctx.fillText('center', 200, 80);
+        // textAlign = 'right'
+        ctx.textAlign = 'right';
+        ctx.fillText('right', 200, 100);
+        
+    </script> -->
+
+    <script>
+        let cvs = document.getElementById('test');
+        let ctx = cvs.getContext('2d');
+
+        let img = new Image();
+
+        img.onload = function() {
+            ctx.drawImage(img, 0, 0, 300, 300);
+        }
+        img.src = 'images/board.jpg';
+    </script>
+</body>
+</html>

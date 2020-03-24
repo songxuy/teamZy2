@@ -1,0 +1,12 @@
+@charset "UTF-8";
+input:valid ~ button {
+  pointer-events: all;
+  cursor: pointer; }
+  input:valid ~ button::after {
+    content: "submit馃憤"; }
+input:invalid ~ button {
+  pointer-events: none; }
+  input:invalid ~ button::after {
+    content: "unvalidate馃槖"; }
+
+/*# sourceMappingURL=valid.css.map */

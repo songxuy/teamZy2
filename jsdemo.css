@@ -1,0 +1,139 @@
+div {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+}
+
+.bar {
+  width: 1.25em;
+  height: 6.25em;
+  background: currentColor;
+}
+
+.bar:nth-child(1) {
+  margin-left: -6.25em;
+}
+
+.bar:nth-child(2) {
+  margin-left: -5em;
+}
+
+.bar:nth-child(3) {
+  margin-left: -3.75em;
+}
+
+.bar:nth-child(4) {
+  margin-left: -2.5em;
+}
+
+.bar:nth-child(5) {
+  margin-left: -1.25em;
+}
+
+.bar:nth-child(6) {
+  margin-left: 0em;
+}
+
+.bar:nth-child(7) {
+  margin-left: 1.25em;
+}
+
+.bar:nth-child(8) {
+  margin-left: 2.5em;
+}
+
+.bar:nth-child(9) {
+  margin-left: 3.75em;
+}
+
+.bar:nth-child(10) {
+  margin-left: 5em;
+}
+
+.bar:nth-child(1) {
+  background: #1e3f57;
+  animation: bar 3s cubic-bezier(0.81, 0.04, 0.4, 0.7) infinite;
+  animation-delay: 0ms;
+}
+
+.bar:nth-child(2) {
+  background: #264a63;
+  animation: bar 3s cubic-bezier(0.81, 0.04, 0.4, 0.7) infinite;
+  animation-delay: 50ms;
+}
+
+.bar:nth-child(3) {
+  background: #2d566f;
+  animation: bar 3s cubic-bezier(0.81, 0.04, 0.4, 0.7) infinite;
+  animation-delay: 100ms;
+}
+
+.bar:nth-child(4) {
+  background: #35617a;
+  animation: bar 3s cubic-bezier(0.81, 0.04, 0.4, 0.7) infinite;
+  animation-delay: 150ms;
+}
+
+.bar:nth-child(5) {
+  background: #3d6d86;
+  animation: bar 3s cubic-bezier(0.81, 0.04, 0.4, 0.7) infinite;
+  animation-delay: 200ms;
+}
+
+.bar:nth-child(6) {
+  background: #447892;
+  animation: bar 3s cubic-bezier(0.81, 0.04, 0.4, 0.7) infinite;
+  animation-delay: 250ms;
+}
+
+.bar:nth-child(7) {
+  background: #4c849e;
+  animation: bar 3s cubic-bezier(0.81, 0.04, 0.4, 0.7) infinite;
+  animation-delay: 300ms;
+}
+
+.bar:nth-child(8) {
+  background: #548fa9;
+  animation: bar 3s cubic-bezier(0.81, 0.04, 0.4, 0.7) infinite;
+  animation-delay: 350ms;
+}
+
+.bar:nth-child(9) {
+  background: #5b9bb5;
+  animation: bar 3s cubic-bezier(0.81, 0.04, 0.4, 0.7) infinite;
+  animation-delay: 400ms;
+}
+
+.bar:nth-child(10) {
+  background: #63a6c1;
+  animation: bar 3s cubic-bezier(0.81, 0.04, 0.4, 0.7) infinite;
+  animation-delay: 450ms;
+}
+
+.loader {
+  -webkit-box-reflect: below 0 linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7));
+}
+
+.loader {
+  width: 12.5em;
+  height: 6.25em;
+}
+
+.loader {
+  margin-left: -6.25em;
+}
+
+.bar {
+  bottom: 0;
+}
+
+@keyframes bar {
+  0% {
+    transform: rotate(-0.5turn) rotateX(-1turn);
+  }
+  75%, 100% {
+    transform: none;
+  }
+}
+
+/*# sourceMappingURL=jsdemo.css.map */

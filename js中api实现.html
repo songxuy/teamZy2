@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js中api实现</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  /* map */
+  /* Array.prototype.myMap = function (fn, context = null) {
+    let arr = Array.prototype.slice.call(this)
+    console.log(arr)
+    let result = []
+    for(let i = 0; i< arr.length; i++) {
+      if(!arr.hasOwnProperty(i))continue
+      result.push(fn.call(context, arr[i]))
+    }
+    return result
+  }
+  let b = [1,2,3,4].myMap((item) => {
+    return item + 1
+  })
+  console.log(b) */
+  /* reduce */
+  /* Array.prototype.myReduce = function (fn, initialValue=null) {
+    let arr = Array.prototype.slice.call(this)
+    var res, startIndex;
+    res = initialValue ? initialValue : arr[0];
+    startIndex = initialValue ? 0 : 1;
+    for(var i = startIndex; i < arr.length; i++) {
+      res = fn.call(null, res, arr[i], i, this);
+    }
+    return res;
+  }
+  let b = [1,2,3,4].myReduce((forward, next) => {
+    return forward + next
+  })
+  console.log(b) */
+
+  /* call/apply */
+  /* Function.prototype.myCall = function (context, ...args) {
+    if (!context) {
+      context = window
+    }
+    context.func = this
+    return context.func(...args)
+  }
+  console.log(Array.prototype.slice.myCall([1,2,3], 2)) */
+  /* Object.create */
+  /* function create (proto) {
+    function fn () {
+    }
+    fn.prototype = proto
+    return new fn()
+  }
+  console.log(create()) */
+  /* new */
+  function myNew (fn, ...arg) {
+    let instance = Object.create(fn.prototype)
+    let res = fn.call(instance, ...arg)
+    return typeof res === 'object' ? res : instance
+  }
+</script>

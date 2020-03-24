@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAEI,oBAAS;EACP,cAAc,EAAE,GAAG;EACnB,MAAM,EAAE,OAAO;EAEf,2BAAS;IACP,OAAO,EAAE,UAAU;AAMvB,sBAAS;EACP,cAAc,EAAE,IAAI;EAEpB,6BAAS;IACP,OAAO,EAAE,cAAc",
+"sources": ["../%E7%BB%83%E4%B9%A0/valid.scss"],
+"names": [],
+"file": "valid.css"
+}

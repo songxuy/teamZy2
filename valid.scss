@@ -1,0 +1,22 @@
+input {
+  &:valid {
+    &~button {
+      pointer-events: all;
+      cursor: pointer;
+
+      &::after {
+        content: "submit👍"
+      }
+    }
+  }
+
+  &:invalid {
+    &~button {
+      pointer-events: none; 
+
+      &::after {
+        content: "unvalidate😒"
+      }
+    }
+  }
+}

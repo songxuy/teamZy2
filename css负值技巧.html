@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css 负值技巧</title>
+</head>
+<style>
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  div.offset {
+    width: 200px; 
+    height: 200px;
+    background-color: #eee;
+    outline: 20px solid #424242;
+    outline-offset: -130px;
+    box-sizing: border-box;
+    animation: scale 3s linear infinite;
+   }
+   @keyframes scale {
+     from {
+      outline-offset: 0;
+     }
+     to {
+      outline-offset: -130px;
+     }
+   }
+   div.shadow{
+     position: relative;
+     width: 200px;
+     height:200px;
+     box-shadow: 0 3px 5px -5px #000;
+   }
+   p.scale{
+     width:300px;
+     transform: scale(-1) ;
+   }
+   p.letter_spacing{
+    position: absolute;
+    width:500px;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 0px;
+    animation: move 10s infinite;
+   }
+   @keyframes move {
+    40% {
+        letter-spacing: 36px;
+    }
+    80% {
+        letter-spacing: -72px;
+    }
+    100% {
+        letter-spacing: -72px;
+    }
+}
+</style>
+<body>
+  <div class="offset"></div>
+  <div class="shadow"></div>
+  <p class="scale">hellow world wowowo</p>
+  <p class="letter_spacing">倒序排列文字</p>
+</body>
+</html>

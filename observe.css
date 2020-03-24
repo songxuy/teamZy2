@@ -1,0 +1,32 @@
+ul {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  list-style: none; }
+  ul li {
+    position: relative;
+    flex-basis: 48%;
+    height: 100px;
+    background-color: #499aff;
+    margin-top: 15px; }
+    ul li.show {
+      animation: left 1s ease; }
+      ul li.show:nth-child(2n) {
+        animation: right 1s ease; }
+
+@keyframes left {
+  from {
+    opacity: 0;
+    transform: translate(-20px, 20px); }
+  to {
+    opacity: 1; } }
+@keyframes right {
+  from {
+    opacity: 0;
+    transform: translate(20px, 20px); }
+  to {
+    opacity: 1; } }
+
+/*# sourceMappingURL=observe.css.map */

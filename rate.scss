@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+input {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.rate-content {
+  $main: #ffa822; // 高亮颜色
+  $basic: #999; // 默认颜色
+  
+  // 单个星星
+  input[name="rate"] {
+    font-family: "iconfont"; // 之前引入的iconfont字体
+    font-size: 30px;
+    padding-right: 10px;
+    transition: transform .2s ease;
+    // 默认显示的星星
+    &::after {
+      content: "\e645";
+      color: $basic;
+      transition: color .4s ease; // 加点颜色过渡效果
+    }
+  }
+  input[name="rate"] {
+    // 高亮的星星
+    &:checked,
+    &:checked ~ input[name="rate"],
+    &:hover,
+    &:hover ~ input[name="rate"] {
+      &::after {
+        content: "\e73c";
+        color: $main;
+      }
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+.rate-content {
+  display: flex;
+  flex-flow: row-reverse;
+}

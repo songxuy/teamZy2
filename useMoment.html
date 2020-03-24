@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>useMoment</title>
+  <script src="./moment.js" type="text/javascript"></script>
+</head>
+<body>
+</body>
+</html>
+<script>
+ let time =  new Moment()
+// 返回当前的时间对象
+console.log(time)
+console.log(time.unix())
+// 返回当前时间的秒数
+
+console.log(time.unix(seconds))
+// 传入秒数，返回传入秒数的时间对象
+
+console.log(time.format('YYYY-MM-DD HH:mm:ss'))
+// 返回值 2017-06-22 四 19:46:14
+
+console.log(Moment.unix(1498132062000).format('YYYY-MM-DD dd HH:mm:ss'))
+function objEqual(obj1,obj2){
+    var o1 = Object.getOwnPropertyNames(obj1)
+    var o2 = Object.getOwnPropertyNames(obj2)
+    console.log(o1,o2)
+    if(o1.length!=o2.length){
+        return false
+    }
+    for(var i =0;i<o1.length;i++){
+        var name = o1[i];
+        if(obj1[name]!=obj2[name]&&getType(obj1[name]==='Object')&&getType(obj2[name]==='Object')){
+            objEqual(obj1[name], obj2[name])
+        } else if(obj1[name]!=obj2[name]&&(getType(obj1[name]!=='Object')||getType(obj2[name]!=='Object'))) {
+          return false
+        }
+    }
+    return true
+}
+function getType(name) {
+  return Object.prototype.toString.call(name).slice(8, -1)
+}
+console.log(getType({}))
+console.log(objEqual({a:2,b:3,c:{e:3}},{a:2,b:3,c:{ e:3 }}))
+
+function shuffle(arr) { 
+  let i = arr.length; 
+  while (i) { 
+    console.log(Math.floor(Math.random() * i))
+    let j = Math.floor(Math.random() * i--);
+    [arr[j], arr[i]] = [arr[i], arr[j]]; 
+  } 
+}
+var arr = [14,5,2,67,[8,3],90,[21,2],12,4,6]
+console.log(Array.prototype.slice.call(arr))
+shuffle(arr)
+console.log(arr)
+</script>

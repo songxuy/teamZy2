@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>prototype</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+  function Foo(name) {
+    this.name = name
+  }
+  let foo = new Foo('sxy')
+  console.log(Foo.prototype)
+  console.log(foo)
+  console.log(foo.__proto__ == Foo.prototype)
+  console.log(foo.__proto__.constructor == Foo)
+  console.log(Function.prototype.__proto__ === Object.prototype)
+  console.log(Object.prototype)
+
+function Parent() {
+    this.title = "parent"
+}
+function Child() {
+    Parent.call(this)
+    this.age = 13
+}
+const parent = new Parent()
+Child.prototype = Object.create(Parent.prototype)
+Child.prototype.constructor = Child;
+const child = new Child()
+const child1 = new Child()
+child.title = 'hhah'
+console.log(child);
+console.log(child1)
+console.log(child.title);
+console.log('parent.constructor: ', parent.constructor);
+</script>

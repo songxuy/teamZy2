@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>二叉树遍历</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+  /* 中序遍历 */
+  /* 递归 */
+  /* var inorderTraversal = function (root, array = []) {
+    if (root) {
+      inorderTraversal(root.left, array);
+      array.push(root.val);
+      inorderTraversal(root.right, array);
+    }
+    return array;
+  };
+  var inorderTraversal1 = function (root) {
+      const result = [];
+      const stack = [];
+      let current = root;
+      while (current || stack.length > 0) {
+        while (current) {
+          stack.push(current);
+          current = current.left;
+        }
+        current = stack.pop();
+        result.push(current.val);
+        current = current.right;
+      }
+      return result;
+    };
+  let arr = { left: null, right: { left: { left: null, rigth: null, val: 3 }, right: null, val: 2 }, val: 1 }
+  console.log(inorderTraversal(arr))
+  console.log(inorderTraversal1(arr)) */
+  /* 前序遍历 */
+  /* var preorderTraversal = function (root, array = []) {
+      if (root) {
+        array.push(root.val);
+        preorderTraversal(root.left, array);
+        preorderTraversal(root.right, array);
+      }
+      return array;
+  };
+  var preorderTraversal1 = function (root) {
+      const result = [];
+      const stack = [];
+      let current = root;
+      while (current || stack.length > 0) {
+        while (current) {
+          result.push(current.val);
+          stack.push(current);
+          current = current.left;
+        }
+        current = stack.pop();
+        current = current.right;
+      }
+      return result;
+    };
+    console.log(preorderTraversal(arr))
+  console.log(preorderTraversal1(arr)) */
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>完整的深拷贝</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+  function clone (target, map = new WeakMap()) {
+    if (typeof target === 'object') {
+      let result = Array.isArray(target) ? [] : {}
+      if (map.get(target)) {
+        return map.get(target)
+      }
+      map.set(target, result)
+      for (let i in target) {
+        if (target.hasOwnProperty(i)) {
+          result[i] = clone(target[i], map)
+        }
+      }
+      return result
+    } else {
+      return target
+    }
+  }
+  function forEach(array, iteratee) {
+    let index = -1;
+    const length = array.length;
+    while (++index < length) {
+        iteratee(array[index], index);
+    }
+    return array;
+}
+  function clone1(target, map = new WeakMap()) {
+    if (typeof target === 'object') {
+        const isArray = Array.isArray(target);
+        let cloneTarget = isArray ? [] : {};
+
+        if (map.get(target)) {
+            return map.get(target);
+        }
+        map.set(target, cloneTarget);
+
+        const keys = isArray ? undefined : Object.keys(target);
+        forEach(keys || target, (value, key) => {
+            if (keys) {
+                key = value;
+            }
+            cloneTarget[key] = clone1(target[key], map);
+        });
+
+        return cloneTarget;
+    } else {
+        return target;
+    }
+}
+  let obj = {
+    a: 1,
+    b: {
+      c: 3
+    },
+    d: [1,2,3,{g: 2}]
+  }
+  obj.obj = obj
+  console.time()
+  let obj1 = clone(obj)
+  console.timeEnd()
+  console.time()
+  let obj2 = clone1(obj)
+  console.timeEnd()
+  obj1.b.c = 5
+  console.log(obj1)
+  console.log(obj)
+</script>

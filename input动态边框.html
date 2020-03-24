@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>input 动态边框</title>
+</head>
+<style>
+  div {
+    position: relative;
+    display: inline-block;
+  }
+  input {
+    outline: none;
+    border: none;
+    background: #fafafa;
+  }
+  .demo1>input ~ span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #262626;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .demo1>input:focus ~ span {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+  .bottom,
+.top,
+.left,
+.right {
+  position: absolute;
+  background-color: #262626;
+  transition: transform 0.1s ease-in-out;
+}
+.bottom,
+.top {
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: scaleX(0);
+}
+
+.left,
+.right {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: scaleY(0);
+}
+.bottom {
+  bottom: 0;
+  transform-origin: right center;
+}
+input:focus ~ .bottom {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.top {
+  top: 0;
+  transform-origin: left center;
+  transition-delay: 0.2s;
+}
+input:focus ~ .top {
+  transform: scaleX(1);
+  transform-origin: right center;
+}
+
+.right {
+  transform-origin: top center;
+  right: 0;
+  transition-delay: 0.1s;
+}
+input:focus ~ .right {
+  transform: scaleY(1);
+  transform-origin: bottom center;
+}
+
+.left {
+  left: 0;
+  transform-origin: bottom center;
+  transition-delay: 0.3s;
+}
+input:focus ~ .left {
+  transform: scaleY(1);
+  transform-origin: top center;
+}
+</style>
+<body>
+  <div class="demo1">
+    <input type="text" />
+    <span></span>
+  </div>
+  <div class="demo2">
+      <input type="text">
+      <span class="bottom"></span>
+      <span class="right"></span>
+      <span class="top"></span>
+      <span class="left"></span>
+    </div>
+</body>
+</html>

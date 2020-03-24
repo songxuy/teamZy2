@@ -1,0 +1,26 @@
+input {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+.rate-content input[name="rate"] {
+  font-family: "iconfont";
+  font-size: 30px;
+  padding-right: 10px;
+  transition: transform .2s ease; }
+  .rate-content input[name="rate"]::after {
+    content: "\e645";
+    color: #999;
+    transition: color .4s ease; }
+.rate-content input[name="rate"]:checked::after, .rate-content input[name="rate"]:checked ~ input[name="rate"]::after, .rate-content input[name="rate"]:hover::after, .rate-content input[name="rate"]:hover ~ input[name="rate"]::after {
+  content: "\e73c";
+  color: #ffa822; }
+.rate-content input[name="rate"]:hover {
+  transform: scale(1.2); }
+
+.rate-content {
+  display: flex;
+  flex-flow: row-reverse; }
+
+/*# sourceMappingURL=rate.css.map */

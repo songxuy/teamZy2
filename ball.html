@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BALL</title>
+</head>
+<style>
+    .effect{
+  width:100%;
+  height:100%;
+  padding-top:50px;
+  filter:contrast(10);
+  background:#fff;
+}
+.blackball{
+  width:100px;
+  height:100px;
+  background:black;
+  padding:10px;
+  border-radius:50%;
+  margin:0 auto;
+  z-index:1;
+  filter:blur(5px);
+}
+.redball{
+  width:60px;
+  height:60px;
+  background:#f00;
+  padding:10px;
+  border-radius:50%;
+  position:absolute;
+  top:70px;
+  left:50px;
+  z-index:2;
+  filter:blur(5px) ;
+  /* animation:rball 6s infinite; */
+}
+@keyframes rball{
+  0%,100%{
+    left:35px;
+    width:60px;
+    height:60px;
+  }
+  4%,54%{
+    width:60px;
+    height:60px;
+  }
+  10%,60%{
+    width:50px;
+    height:70px;
+  }
+  20%,70%{
+    width:60px;
+    height:60px;
+  }
+  34%,90%{
+    width:70px;
+    height:50px;
+  }
+  41%{
+    width:60px;
+    height:60px;
+  }
+  50%{
+    left:calc(100% - 95px);
+    width:60px;
+    height:60px;
+  }
+  
+}
+.effect1{
+  position: relative;
+  width:100%;
+  height:310px;
+  padding-top:50px;
+  filter:contrast(12);
+  background:#fff;
+}
+.blueball1{
+  width:80px;
+  height:80px;
+  background:#00f;
+  padding:10px;
+  border-radius:50%;
+  position:absolute;
+  top:230px;
+  left:0;
+  z-index:2;
+  filter:blur(8px) ;
+  animation:bball1 6s infinite;
+}
+.blueball2{
+  width:80px;
+  height:80px;
+  background:#00f;
+  padding:10px;
+  border-radius:50%;
+  position:absolute;
+  top:230px;
+  left:240px;
+  z-index:2;
+  filter:blur(8px) ;
+  animation:bball2 6s infinite;
+}
+@keyframes bball1{
+  0%,100%{
+    left:0;
+    top:230px;
+    width:80px;
+    height:80px;
+  }
+  20%{
+    top:230px;
+    width:80px;
+    height:80px;
+  }
+  85%{
+    top:230px;
+    left:75px;
+    width:90px;
+    height:70px;
+  }
+  90%{
+    top:228px;
+    width:75px;
+    height:85px;
+  }
+  50%{
+    top:215px;
+    left:110px;
+    width:110px;
+    height:110px;
+  }
+}
+@keyframes bball2{
+  0%,100%{
+    left:240px;
+    top:230px;
+    width:80px;
+    height:80px;
+  }
+  20%{
+    top:230px;
+    width:80px;
+    height:80px;
+  }
+  85%{
+    top:230px;
+    left:165px;
+    width:90px;
+    height:70px;
+  }
+  90%{
+    top:228px;
+    width:75px;
+    height:85px;
+  }
+  50%{
+    left:110px;
+    top:215px;
+    width:110px;
+    height:110px;
+  }
+}
+.exammple {
+    background: linear-gradient(0, #108b96 2px, #108b96 2px) no-repeat, 
+                linear-gradient(-90deg, #108b96 2px, #108b96 2px) no-repeat, 
+                linear-gradient(-180deg, #108b96 2px, #108b96 2px) no-repeat, 
+                linear-gradient(-270deg, #108b96 2px, #108b96 2px) no-repeat;
+    background-size: 0% 2px, 2px 0, 0 2px, 2px 0;
+    background-position: left top, right top, right bottom, left bottom;
+    padding:20px;
+    text-align: center;
+    transition: all 1s;
+}
+.exammple:hover {
+    background-size: 100% 2px,  2px 100%, 100% 2px, 2px 100%;
+}
+</style>
+<body>
+    <div class="effect">
+      <div class="blackball"></div>
+      <div class="redball"></div>
+    </div>
+    <div class="effect1">
+        <div class="blueball1"></div>
+        <div class="blueball2"></div>
+      </div>
+      <div class="exammple">Example</div>
+</body>
+</html>
